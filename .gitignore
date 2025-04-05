@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# DVC-managed data
+data/**
+!data/**/*.dvc
+models/**
+!models/**/*.dvc
+
+# MLflow
+mlruns/
