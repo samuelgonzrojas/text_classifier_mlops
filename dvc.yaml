@@ -2,23 +2,22 @@ stages:
   preprocess:
     cmd: python src/data_prep.py
     deps:
-      - data/raw/data.csv
-      - src/data_prep.py
+    - data/raw/data.csv
+    - src/data_prep.py
     outs:
-      - data/processed/train.csv
-      - data/processed/test.csv
+    - data/processed/train.csv
+    - data/processed/test.csv
 
   train:
     cmd: python src/train.py
     deps:
-      - data/processed/train.csv
-      - src/train.py
+    - src/train.py
+    - data/processed/train.csv
+    params:
+    - train.test_size
+    - train.max_iter
     outs:
-      - models/text_model.pkl
+    - models/text_model.pkl
 
   evaluate:
-    cmd: python src/evaluate.py
-    deps:
-      - data/processed/test.csv
-      - models/text_model.pkl
-      - src/evaluate.py
+    cmd: \
