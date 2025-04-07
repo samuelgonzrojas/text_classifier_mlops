@@ -12,3 +12,4 @@ models/**
 
 # MLflow
 mlruns/
+/metrics.json
