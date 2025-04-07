@@ -1,2 +1,5 @@
 [core]
     autostage = true
+    remote = myremote
+['remote "myremote"']
+    url = ../git:https:/github.com/samuelgonzrojas/text_classifier_mlops
